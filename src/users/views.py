@@ -128,7 +128,7 @@ def DeliveryPersonRegister(request):
                 messages.info(request,'Username Already Used')
                 return redirect('deliveryPersonRegister')
             else:
-                user=User.objects.create_user(username=email,first_name=first_name,email=email,password=password,is_bloodbank=True)
+                user=User.objects.create_user(username=username,first_name=first_name,last_name=last_name,email=email,password=password,is_deliveryPerson=True)
                 user.save();
                 return redirect('deliveryPersonLogin')
 
@@ -146,7 +146,7 @@ def DeliveryPersonLogin(request):
         user=auth.authenticate(username=username,password=password)
 
         if user is not None:
-            if user.is_deliveryperson==True:
+            if user.is_deliveryPerson==True:
                 auth.login(request,user)
                 return redirect('index')
             else:
