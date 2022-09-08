@@ -1,0 +1,66 @@
+{% extends 'components/base.html' %}
+
+{% block title %}
+Register | Blood Bank
+{% endblock %}
+
+
+{% block body %}
+
+
+
+<div class="register-container">
+    <div class="card register-card" style="width: 340px">
+        <div class="card-body">
+          <h5 class="card-title text-center mt-4 mb-5">BLOOD BANK REGISTER</h5>
+          {% if messages %}
+                {% for message in messages %}
+                   <p class="text-center red-text"> {{ message }} </p>
+                {% endfor %}
+          {% endif %}
+          <form action="{% url 'registerPageBloodBank' %}" method="post" >
+            {% csrf_token %}
+          <div class="div">
+              <div class="form-floating mb-3 mx-1">
+                <input type="text" class="form-control" id="floatingInput1" placeholder="First Name" name="bloodbank_name">
+                <label for="floatingInput1">Blood Bank Name</label>
+              </div>
+              <!-- <div class="form-floating mb-3 mx-1">
+                <input type="text" class="form-control" id="floatingInput2" placeholder="Last Name" name="last_name">
+                <label for="floatingInput2">Last Name</label>
+              </div> -->
+          </div>
+
+          <!-- <div class="form-floating mb-3 mx-1">
+            <input type="text" class="form-control" id="floatingInput3" placeholder="Username" name="username">
+            <label for="floatingInput3">Username</label>
+          </div> -->
+
+          <div class="form-floating mb-3 mx-1">
+            <input type="email" class="form-control" id="floatingInput4" placeholder="abc@gmail.com" name="email">
+            <label for="floatingInput4">Email</label>
+          </div>
+
+          
+
+
+          <div class="form-floating mb-4">
+            <input type="password" class="form-control" id="floatingPassword" placeholder="Password" name="password">
+            <label for="floatingPassword">Password</label>
+          </div>
+
+          <div class="form-floating mb-4">
+            <input type="password" class="form-control" id="floatingPassword1" placeholder="Password" name="password2">
+            <label for="floatingPassword1">Confirm Password</label>
+          </div>
+          <p  class="card-text text-center">Already a User? <a href="{% url 'loginPageBloodBank' %}" class="card-link register-page-login-link">Login Here</a></p>
+          <div class="text-center mt-4 mb-2">
+              <button type="submit" class="btn register-btn">Register</button>
+          </div>
+        </form>
+        </div>
+      </div>
+</div>
+
+
+{% endblock %}
