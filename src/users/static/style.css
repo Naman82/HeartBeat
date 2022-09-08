@@ -1,0 +1,79 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Login Page */
+
+.login-container{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./img/blood.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* margin: 0 !important; */
+    /* padding: 0 !important; */
+}
+
+.login-card{
+    background: none;
+    /* opacity: 0.2; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.login-btn{
+    color: white;
+    border-radius: 0;
+    background: black;
+}
+
+.login-btn:hover{
+    background: white;
+    color: black;
+}
+
+.login-page-register-link{
+    text-decoration: none;
+    color: darkblue;
+}
+
+/* Register Page  */
+
+.register-container{
+    min-height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("./img/blood.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.register-card{
+    background: none;
+    /* opacity: 0.2; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.register-btn{
+    color: white;
+    border-radius: 0;
+    background: #F2D388;
+}
+
+.register-page-login-link{
+    text-decoration: none;
+    color: darkblue;
+}
+
+.register-btn:hover{
+    background: white;
+    color: #F2D388;
+}
