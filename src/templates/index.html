@@ -1,5 +1,5 @@
 {% extends 'components/base.html' %}
-
+{% load static %}
 {% block title %}
 Home
 {% endblock %}
@@ -7,6 +7,272 @@ Home
 {% block body %}
 
 {% include 'components/navbar.html' %}
+
+<section id="top-section">
+    <div class="row top-row">
+        <div class="col-lg-6">
+            <div id="frameWrap">
+                <img id="loader1" class="top-gif" src="{% static 'img/donate.gif' %}" alt="loading gif" />
+            </div>
+        </div>
+        <div class="col-lg-6 quote-div">
+            <div class="quote-card">
+                <div class="quote-icon-div">
+                    <i class="fa-solid fa-quote-left fa-4x"></i>
+                </div>
+                <div class="quote-text">
+                    <h3>Be</h3>
+                    <h3>the reason</h3>
+                    <h3>for</h3>
+                    <h3>someone's heartbeat</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="card-section">
+    <div class="container card-contain-div">
+        <div class="card mod-card" style="width: 18rem; height: 454px;">
+            <img class="card-img-top" src="{% static 'img/donate_blood.jpg' %}" style="height: 286px; width:286px;"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Donate Blood</h5>
+                <p class="card-text">Register for saving a life in just a click</p>
+                <a href="#" class="btn card-btn">Register</a>
+            </div>
+        </div>
+
+        <div class="card mod-card" style="width: 18rem; height: 454px;">
+            <img class="card-img-top" src="{% static 'img/want2.png' %}" style="height: 286px; width:286px;"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Want Blood</h5>
+                <p class="card-text">Register for saving a life in just a click</p>
+                <a href="#" class="btn card-btn">Request</a>
+            </div>
+        </div>
+
+        <div class="card mod-card" style="width: 18rem; height: 454px;">
+            <img class="card-img-top" src="{% static 'img/availability.png' %}" style="height: 286px; width:286px;"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Blood Availabilty</h5>
+                <p class="card-text">Register for saving a life in just a click</p>
+                <a href="#" class="btn card-btn">Check</a>
+            </div>
+        </div>
+
+        <div class="card mod-card" style="width: 18rem; height: 454px;">
+            <img class="card-img-top" src="{% static 'img/camp.png' %}" style="height: 286px; width:286px;"
+                alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Blood Donation Camps</h5>
+                <p class="card-text">Register for saving a life in just a click</p>
+                <a href="#" class="btn card-btn">Set Up</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section id="blood-donation-info-section">
+    <div class="blood-donation-info-heading-div">
+        <h3 class="blood-donation-info-heading-text">LEARN ABOUT DONATION</h3>
+    </div>
+    <div class="row blood-donation-row">
+        <div class="blood-donation-info-img col-lg-6">
+            <img src="{% static 'img/loading.png' %}" style="width: 100%;" alt="loading-img">
+        </div>
+        <div class="blood-donation-info-table col-lg-6">
+            <img src="{% static 'img/blood_info_table.png' %}" style="width: 100%;" alt="blood-info-table">
+        </div>
+    </div>
+</section>
+
+<section id="types-section">
+    <div class="types-div">
+        <div class="types-heading-div">
+            <h3 class="types-heading-text">TYPES OF DONATION</h3>
+        </div>
+        <p style="line-height: 2;">The human body contains five liters of blood, which is made of several useful components i.e. <b>Whole blood,
+                Platelet, and Plasma.</b> </p>
+        <p style="line-height: 2;">Each type of component has several medical uses and can be used for different medical treatments. your blood
+            donation determines the best donation for you to make.</p>
+        <p style="line-height: 2;">For plasma and platelet donation you must have donated whole blood in past two years.</p>
+        <div class="about-types">
+            <div class="about-types-heading-container">
+                <div class="about-types-heading-div now-disp" id="whole-blood-btn">
+                    <p class="about-types-heading-text" style="cursor: pointer;">Whole Blood</p>
+                </div>
+                <div class="about-types-heading-div" id="plasma-btn">
+                    <p class="about-types-heading-text" style="cursor: pointer;">Plasma</p>
+                </div>
+                <div class="about-types-heading-div" id="platelet-btn">
+                    <p class="about-types-heading-text" style="cursor: pointer;">Platelet</p>
+                </div>
+            </div>
+
+            <div class="about-types-description-container" id="whole-blood-description">
+                <div class="about-types-description-div" id="what-is-it">
+                    <h5 class="about-types-description-heading-text">What is it?</h5>
+                    <p class="about-types-description-text">Blood Collected straight from the donor after its donation usually separated into red blood cells, platelets, and plasma.</p>
+                </div>
+                <div class="about-types-description-div" id="used-for">
+                    <h5 class="about-types-description-heading-text">User For?</h5>
+                    <p class="about-types-description-text">Stomach disease, kidney disease, childbirth, operations, blood loss, trauma, cancer, blood diseases, haemophilia, anemia, heart disease.</p>
+                </div>
+                <div class="about-types-description-div" id="how-long-does-it-take">
+                    <h5 class="about-types-description-heading-text">How long does it take?</h5>
+                    <p class="about-types-description-text">15 minutes to donate.</p>
+                </div>
+                <div class="about-types-description-div" id="who-can-donate">
+                    <h5 class="about-types-description-heading-text">Who can donate?</h5>
+                    <p class="about-types-description-text">You need to be 18-65 years old, weigh 45kg or more and be fit and healthy.</p>
+                </div>
+                <div class="about-types-description-div" id="lasts-for">
+                    <h5 class="about-types-description-heading-text">Lasts For?</h5>
+                    <p class="about-types-description-text">Red cells can be stored for 42 days.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-types-description-container" id="plasma-description">
+            <div class="about-types-description-div" id="what-is-it">
+                <h5 class="about-types-description-heading-text">What is it?</h5>
+                <p class="about-types-description-text">The straw-coloured liquid in which red blood cells, white blood cells, and platelets float in.Contains special nutrients which can be used to create 18 different type of medical products to treat many different medical conditions.</p>
+            </div>
+            <div class="about-types-description-div" id="used-for">
+                <h5 class="about-types-description-heading-text">User For?</h5>
+                <p class="about-types-description-text">Immune system conditions, pregnancy (including anti-D injections), bleeding, shock, burns, muscle and nerve conditions, haemophilia, immunisations.</p>
+            </div>
+            <div class="about-types-description-div" id="how-long-does-it-take">
+                <h5 class="about-types-description-heading-text">How long does it take?</h5>
+                <p class="about-types-description-text">15 minutes to donate.</p>
+            </div>
+            <div class="about-types-description-div" id="who-can-donate">
+                <h5 class="about-types-description-heading-text">Who can donate?</h5>
+                <p class="about-types-description-text">You need to be 18-70 (men) or 20-70 (women) years old, weigh 50kg or more and must have given successful whole blood donation in last two years.</p>
+            </div>
+            <div class="about-types-description-div" id="lasts-for">
+                <h5 class="about-types-description-heading-text">Lasts For?</h5>
+                <p class="about-types-description-text">Plasma can last up to one year when frozen.</p>
+            </div>
+            <div class="about-types-description-div" id="how-does-it-work">
+                <h5 class="about-types-description-heading-text">How does it work?</h5>
+                <p class="about-types-description-text">We collect your blood, keep plasma and return rest to you by apheresis donation.</p>
+            </div>
+            <div class="about-types-description-div" id="how-often-can-i-donate">
+                <h5 class="about-types-description-heading-text">How often can I donate?</h5>
+                <p class="about-types-description-text">Every 2-3 weeks.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="about-types-description-container" id="platelet-description">
+        <div class="about-types-description-div" id="what-is-it">
+            <h5 class="about-types-description-heading-text">What is it?</h5>
+            <p class="about-types-description-text">The tiny 'plates' in blood that wedge together to help to clot and reduce bleeding. Always in high demand, Vital for people with low platelet count, like malaria and cancer patients.</p>
+        </div>
+        <div class="about-types-description-div" id="used-for">
+            <h5 class="about-types-description-heading-text">User For?</h5>
+            <p class="about-types-description-text">Cancer, blood diseases, haemophilia, anaemia, heart disease, stomach disease, kidney disease, childbirth, operations, blood loss, trauma, burns.</p>
+        </div>
+        <div class="about-types-description-div" id="how-long-does-it-take">
+            <h5 class="about-types-description-heading-text">How long does it take?</h5>
+            <p class="about-types-description-text">45 minutes to donate.</p>
+        </div>
+        <div class="about-types-description-div" id="who-can-donate">
+            <h5 class="about-types-description-heading-text">Who can donate?</h5>
+            <p class="about-types-description-text">You need to be 18-70 years old (men), weigh 50kg or more and have given a successful plasma donation in the past 12 months</p>
+        </div>
+        <div class="about-types-description-div" id="lasts-for">
+            <h5 class="about-types-description-heading-text">Lasts For?</h5>
+            <p class="about-types-description-text">Just five days..</p>
+        </div>
+        <div class="about-types-description-div" id="how-does-it-work">
+            <h5 class="about-types-description-heading-text">How does it work?</h5>
+            <p class="about-types-description-text">We collect your blood, keep platelet and return rest to you by apheresis donation.</p>
+        </div>
+        <div class="about-types-description-div" id="how-often-can-i-donate">
+            <h5 class="about-types-description-heading-text">How often can I donate?</h5>
+            <p class="about-types-description-text">Every 2 weeks</p>
+    </div>
+</div>
+    </div>
+</section>
+
+<section class="footer-section">
+    <div class="footer-div">
+        <div class="footer-img-div">
+            <img src="{% static 'img/footer.png' %}" alt="footer-img" style="width: 100px;">
+        </div>
+        <div>
+            <p style="color: white;">&copy; Team Ninja Developers</p>
+        </div>
+    </div>
+</section>
+
+
+<script>
+    const wholeBloodEl = document.getElementById('whole-blood-description');
+    const plasmaEl = document.getElementById('plasma-description');
+    const plateletEl = document.getElementById('platelet-description');
+    document.getElementById('whole-blood-btn').addEventListener('click', function() {
+        if(wholeBloodEl.style.display == 'none')
+        {
+            wholeBloodEl.style.display = "flex";
+            plasmaEl.style.display = "none";
+            plateletEl.style.display = "none";
+            document.getElementById('whole-blood-btn').classList.add('now-disp');
+            document.getElementById('plasma-btn').classList.remove('now-disp');
+            document.getElementById('platelet-btn').classList.remove('now-disp');
+        }
+        else
+        {
+            wholeBloodEl.style.display = "none";
+            document.getElementById('whole-blood-btn').classList.remove('now-disp');
+        }
+    });
+    document.getElementById('plasma-btn').addEventListener('click', function() {
+        if(plasmaEl.style.display == 'none')
+        {
+            plasmaEl.style.display = "flex";
+            wholeBloodEl.style.display = "none";
+            plateletEl.style.display = "none";
+            document.getElementById('whole-blood-btn').classList.remove('now-disp');
+            document.getElementById('plasma-btn').classList.add('now-disp');
+            document.getElementById('platelet-btn').classList.remove('now-disp');
+        }
+        else
+        {
+            plasmaEl.style.display = 'none';
+            document.getElementById('plasma-btn').classList.remove('now-disp');
+        }
+    });
+    document.getElementById('platelet-btn').addEventListener('click', function() {
+        if(plateletEl.style.display == 'none')
+        {
+            plateletEl.style.display = "flex";
+            wholeBloodEl.style.display = "none";
+            plasmaEl.style.display = 'none';
+            document.getElementById('whole-blood-btn').classList.remove('now-disp');
+            document.getElementById('plasma-btn').classList.remove('now-disp');
+            document.getElementById('platelet-btn').classList.add('now-disp');
+        }
+        else
+        {
+            plateletEl.style.display = "none";
+            document.getElementById('platelet-btn').classList.remove('now-disp');
+        }
+
+    });
+
+
+
+    
+</script>
+
 
 
 {% endblock %}

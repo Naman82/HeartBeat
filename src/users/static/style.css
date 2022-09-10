@@ -2,6 +2,11 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+p{
+    margin: 0;
+    padding: 0;
 }
 
 /* Login Page */
@@ -77,3 +82,251 @@
     background: white;
     color: #F2D388;
 }
+
+/* Navbar */
+
+.navbar-brand{
+    color: white;
+}
+
+.modified-navbar{
+    background: #F32C2C;
+    color: white;
+}
+
+.nav-link{
+    color: white;
+    text-decoration: none;
+}
+
+.nav-link:hover{
+    color: black;
+}
+
+.side-links{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    flex-direction: row;
+}
+
+.nav-item{
+    margin-left: 20px;
+}
+
+
+@media only screen and (max-width: 991px) {
+    .navbar-nav{
+        margin-right: auto;
+    }
+  }
+
+  /* Index Page */
+
+  .top-row{
+    margin: 0 !important;
+  }
+
+  .top-gif{
+    /* width: 100vw; */
+    width: 100%;
+  }
+
+  #frameWrap{
+    padding: 3% 4%;
+  }
+
+  .quote-card{
+    /* box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px; */
+    /* box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; */
+    height: 100%;
+  }
+  
+  .col-lg-6{
+    padding: 0;
+    margin: 0;
+  }
+
+  .quote-card{
+    padding: 35px 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: column;
+    background: white;
+    color: #F32C2C;
+  }
+
+  .quote-icon-div{
+    /* margin-bottom: 50px; */
+    width: 100%;
+    text-align: left;
+
+  }
+
+  /* Card Section  */
+
+  #card-section{
+    width: 100vw;
+  }
+
+  .card-contain-div{
+    width: 100vw;
+    padding: 1% 2%;
+    flex-wrap: wrap;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .card-body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .mod-card{
+    background: #F32C2C;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 30px;
+  }
+
+  .card-title{
+    margin-bottom: 10px;
+    font-weight: 700;
+  }
+
+  .card-btn{
+    color: #F32C2C;
+    background: white;
+  }
+
+  /* Blood Donation Information */
+
+  .blood-donation-row{
+    margin: 0 !important;
+    padding: 2% 3%;
+  }
+
+  .blood-donation-info-heading-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #F32C2C;
+  }
+
+  /* Types of Blood Donation  */
+
+  .types-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 2% 3%;
+  }
+
+  .types-heading-div{
+    margin-bottom: 30px;
+  }
+
+  .about-types{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .about-types-heading-container{
+    display: flex;
+    justify-content: start;
+    align-items: flex-start;
+    flex-direction: row;
+  }
+
+  .about-types-heading-div{
+    padding: 10px 15px;
+    background: #F32C2C;
+    color: white;
+    /* margin: 10px 20px; */
+    /* width: 140px; */
+    /* height: 60px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .about-types-description-text{
+    text-align: center;
+  }
+
+  .about-types-description-container{
+    padding: 2% 3%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #whole-blood-description{
+    display: flex;
+  }
+
+  #plasma-description{
+    display: none;
+  }  
+  
+  #platelet-description{
+    display: none;
+  }
+
+  .now-disp{
+    background: white;
+    color: #F32C2C;
+  }
+
+  .about-types-description-div{
+    width: 18rem;
+    height: 18rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+    padding: 25px 30px;
+    /* box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px; */
+    margin-bottom: 30px;
+    /* border-right: 1px solid gray;
+    border-left: 1px solid gray; */
+    background: #F32C2C;
+    color: white;
+  }
+
+  .about-types-description-heading-text{
+    text-align: center;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+
+  /* Footer Section  */
+
+  .footer-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2% 3%;
+    flex-direction: column;
+    background: #F32C2C;
+  }
+
+  .footer-img-div{
+    margin-bottom: 20px;
+  }
+
+ 
+
+
