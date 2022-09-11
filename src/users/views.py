@@ -33,12 +33,12 @@ def bloodStockEdit(request,pk):
         if request.POST:
             user=User.objects.get(pk=pk)
             update_bloodstock=BloodStock.objects.get(user=user)
-            apositive = request.POST['apositive']
-            anegative = request.POST['anegative']
-            opositive = request.POST['opositive']
-            onegative = request.POST['onegative']
-            abpositive = request.POST['abpositive']
-            abnegative = request.POST['abnegative']
+            apositive = request.POST['A_positive']
+            anegative = request.POST['A_negative']
+            opositive = request.POST['O_positive']
+            onegative = request.POST['O_negative']
+            abpositive = request.POST['AB_positive']
+            abnegative = request.POST['AB_negative']
 
             update_bloodstock.apositive=apositive
             update_bloodstock.anegative=anegative
