@@ -24,15 +24,13 @@ class CustomerProfile(models.Model):
     pincode=models.CharField(max_length=10,null=True,blank=True)
 
 class BloodStock(models.Model):
-    user=models.ForeignKey(User,on_delete=models.CASCADE)
-    A_postive = models.IntegerField()
-    A_negative = models.IntegerField()
-    B_postive = models.IntegerField()
-    B_negative = models.IntegerField()
-    AB_postive = models.IntegerField()
-    AB_negative = models.IntegerField()
-    O_postive = models.IntegerField()
-    O_negative = models.IntegerField()
+    user=models.OneToOneField(User,on_delete=models.CASCADE)
+    apositive = models.IntegerField()
+    anegative = models.IntegerField()
+    abpositive = models.IntegerField()
+    abnegative = models.IntegerField()
+    opositive = models.IntegerField()
+    onegative = models.IntegerField()
 
 class BloodBankProfile(models.Model):
     user=models.ForeignKey(User,on_delete=models.CASCADE)

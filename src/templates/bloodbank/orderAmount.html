@@ -1,0 +1,46 @@
+{% extends 'components/base.html' %}
+
+{% block title %}
+Register | Blood Bank
+{% endblock %}
+
+
+{% block body %}
+
+{% include 'components/navbar.html' %}
+
+<div class="register-container">
+    <div class="card register-card" style="width: 360px">
+        <div class="card-body">
+          <h5 class="card-title text-center mt-4 mb-5">BLOOD ORDER</h5>
+          <form action="{% url 'paymentPage' %}" method="post" >
+            {% csrf_token %}
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">From </label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="{{bloodbank.user.first_name}}" disabled>
+              </div>
+            <select class="form-select mb-3" aria-label="Default select example">
+                <!-- <option selected>Open this select menu</option> -->
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+              </select>
+              <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Quantity (in Ltrs.)</label>
+                <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="99" name="quantity">
+              </div>
+              <div class="text-center mt-4 mb-2">
+                <button type="submit" class="btn btn-success">Order Now</button>
+            </div>
+        </form>
+        </div>
+      </div>
+</div>
+
+
+
+
+{% endblock %}

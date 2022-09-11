@@ -127,3 +127,7 @@ STATICFILESDIRS = os.path.join(BASE_DIR,'static')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 AUTH_USER_MODEL = 'users.User'
+
+STRIPE_PUBLISHABLE_KEY = 'pk_test_51LgXo0SEd9yZ4TiMDXvxpOcWuY99z747ppyZMFJxExiMOwx7VKIxtkPWsZfamoUIluV8Y0uBEfcb8vM2zm8q57Xu00w3eMjHZm'
+
+STRIPE_SECRET_KEY = 'sk_test_51LgXo0SEd9yZ4TiMmUSXBYmkghXBR0WXgHFlJtNYFBlumqwxdaaEqEU28Jvt8QcbQyyMkdWc9IY8zh6MI9oMKdcR00vrptacHj'

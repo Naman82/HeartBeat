@@ -1,15 +1,57 @@
 from django.shortcuts import render
-from .models import User
+from .models import User,BloodStock
 from django.shortcuts import render
 from django.shortcuts import render,redirect
 from django.contrib.auth.models import auth
 from django.contrib import messages
+import stripe
+
+
+stripe.api_key = 'sk_test_51LgXo0SEd9yZ4TiMmUSXBYmkghXBR0WXgHFlJtNYFBlumqwxdaaEqEU28Jvt8QcbQyyMkdWc9IY8zh6MI9oMKdcR00vrptacHj'
 
 # Create your views here.
 def index(request):
     return render(request,'index.html')
 
-def bloodstock(request):
+def bloodStock(request):
+    if request.POST:
+        apositive = request.POST['A_positive']
+        anegative = request.POST['A_negative']
+        opositive = request.POST['O_positive']
+        onegative = request.POST['O_negative']
+        abpositive = request.POST['AB_positive']
+        abnegative = request.POST['AB_negative']
+
+        new_bloodstock = BloodStock(user=request.user,apositive=apositive,anegative=anegative,onegative=onegative,opositive=opositive,abnegative=abnegative,abpositive=abpositive)
+        new_bloodstock.save()
+        return redirect('index')
+    return render(request,'bloodbank/bloodstock.html')
+
+def bloodStockEdit(request,pk):
+    if pk is not None:
+        
+        if request.POST:
+            user=User.objects.get(pk=pk)
+            update_bloodstock=BloodStock.objects.get(user=user)
+            apositive = request.POST['apositive']
+            anegative = request.POST['anegative']
+            opositive = request.POST['opositive']
+            onegative = request.POST['onegative']
+            abpositive = request.POST['abpositive']
+            abnegative = request.POST['abnegative']
+
+            update_bloodstock.apositive=apositive
+            update_bloodstock.anegative=anegative
+            update_bloodstock.opositive=opositive
+            update_bloodstock.onegative=onegative
+            update_bloodstock.abpositive=abpositive
+            update_bloodstock.abnegative=abnegative
+
+            # new_bloodstock = BloodStock(user=request.user,A_positive=A_positive,A_negative=A_negative,O_negative=O_negative,O_positive=O_positive,AB_negative=AB_negative,AB_positive=AB_positive)
+            update_bloodstock.save()
+            return redirect('index')
+        else:
+            return render(request,'bloodbank/bloodstockedit.html')
     return render(request,'bloodbank/bloodstock.html')
 
 def CustomerRegister(request):
@@ -66,7 +108,7 @@ def CustomerLogin(request):
 def BloodBankRegister(request):
     if request.method =='POST':
         # username=request.POST['username']
-        first_name=request.POST['bloodbank_name']
+        first_name=request.POST['first_name']
         # last_name=request.POST['last_name']
         email=request.POST['email']
         password=request.POST['password']
@@ -100,7 +142,7 @@ def BloodBankLogin(request):
         if user is not None:
             if user.is_bloodbank==True:
                 auth.login(request,user)
-                return redirect('bloodstock')
+                return redirect('index')
             else:
                 messages.info(request,'Credentials Invalid')
                 return redirect('loginPageBloodBank')
@@ -162,3 +204,40 @@ def DeliveryPersonLogin(request):
 def logout(request):
     auth.logout(request)
     return redirect('/')
+
+
+def BloodBankList(request):
+    bloodbanks=BloodStock.objects.all()
+    # print(bloodbanks)
+    return render(request,'bloodbank/bloodbanklist.html',{'bloodbanks':bloodbanks})
+
+def BloodOrder(request,pk):
+    bloodbank=BloodStock.objects.get(pk=pk)
+    # print(bloodbank.user.first_name)
+    return render(request,'bloodbank/orderAmount.html',{'bloodbank':bloodbank})
+
+def success(request):
+    return render(request,'success.html')
+
+def cancel(request):
+    return render(request,'cancel.html')
+
+
+YOUR_DOMAIN = 'http://localhost:8000'
+
+def paymentPage(request):
+    if request.method == 'POST':
+        quantity = request.POST['quantity']
+    checkout_session = stripe.checkout.Session.create(
+            line_items=[
+                {
+                    # Provide the exact Price ID (for example, pr_1234) of the product you want to sell
+                    'price': 'price_1LgfIfSEd9yZ4TiMcl4DMWS1',
+                    'quantity': quantity,
+                },
+            ],
+            mode='payment',
+            success_url=YOUR_DOMAIN + '/success.html',
+            cancel_url=YOUR_DOMAIN + '/cancel.html',
+        )
+    return redirect(checkout_session.url, code=303)

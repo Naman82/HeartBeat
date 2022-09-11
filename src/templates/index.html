@@ -42,24 +42,28 @@ Home
                 <a href="#" class="btn card-btn">Register</a>
             </div>
         </div>
-
         <div class="card mod-card" style="width: 18rem; height: 454px;">
             <img class="card-img-top" src="{% static 'img/want2.png' %}" style="height: 286px; width:286px;"
-                alt="Card image cap">
+            alt="Card image cap">
             <div class="card-body">
+                {% if user.is_bloodbank %}
+                <h5 class="card-title">Blood Stock</h5>
+                <p class="card-text">Update Blood Stock for saving a life in just a click</p>
+                <a href="{% url 'bloodStockEdit' pk=user.pk %}" class="btn card-btn">Update</a>
+                {% else %}
                 <h5 class="card-title">Want Blood</h5>
-                <p class="card-text">Register for saving a life in just a click</p>
-                <a href="#" class="btn card-btn">Request</a>
+                <p class="card-text">Request Blood for saving a life in just a click</p>
+                <a href="{% url 'bloodBankList' %}" class="btn card-btn">Request</a>
+                {% endif %}
             </div>
         </div>
-
         <div class="card mod-card" style="width: 18rem; height: 454px;">
             <img class="card-img-top" src="{% static 'img/availability.png' %}" style="height: 286px; width:286px;"
                 alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Blood Availabilty</h5>
-                <p class="card-text">Register for saving a life in just a click</p>
-                <a href="#" class="btn card-btn">Check</a>
+                <p class="card-text">Check for blood for saving a life.</p>
+                <a href="{% url 'bloodBankList' %}" class="btn card-btn">Check</a>
             </div>
         </div>
 
@@ -68,8 +72,14 @@ Home
                 alt="Card image cap">
             <div class="card-body">
                 <h5 class="card-title">Blood Donation Camps</h5>
-                <p class="card-text">Register for saving a life in just a click</p>
+                
+                {% if user.is_bloodbank %}
+                <p class="card-text">Organise Blood Donation Camps for saving a life.</p>
                 <a href="#" class="btn card-btn">Set Up</a>
+                {% else %}
+                <p class="card-text">Register for saving a life in just a click</p>
+                <a href="#" class="btn card-btn">Register</a>
+                {% endif %}
             </div>
         </div>
 

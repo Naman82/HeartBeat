@@ -1,0 +1,46 @@
+{% extends 'components/base.html' %}
+
+{% block title %}
+Register | Blood Bank
+{% endblock %}
+
+
+{% block body %}
+
+{% include 'components/navbar.html' %}
+<div class="container">
+<table class="table table-bordered">
+    <thead>
+      <tr>
+        <th scope="col">S.No.</th>
+        <th scope="col">Blood Bank</th>
+        <th scope="col">A+ (in Ltrs.)</th>
+        <th scope="col">A- (in Ltrs.)</th>
+        <th scope="col">O+ (in Ltrs.)</th>
+        <th scope="col">O- (in Ltrs.)</th>
+        <th scope="col">AB+ (in Ltrs.)</th>
+        <th scope="col">AB- (in Ltrs.)</th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+        {% for bloodbank in bloodbanks %}
+      <tr>
+        <th scope="row">{{bloodbank.id}}</th>
+        <td>{{bloodbank.user.first_name}}</td>
+        <td>{{bloodbank.apositive}}</td>
+        <td>{{bloodbank.anegative}}</td>
+        <td>{{bloodbank.opositive}}</td>
+        <td>{{bloodbank.onegative}}</td>
+        <td>{{bloodbank.abpositive}}</td>
+        <td>{{bloodbank.abnegative}}</td>
+        <td><a href="{% url 'orderAmount' pk=bloodbank.pk %}" class="btn btn-primary">Order</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+
+
+{% endblock %}

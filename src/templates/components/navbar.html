@@ -6,7 +6,7 @@
 
   <nav class="navbar navbar-dark navbar-expand-lg modified-navbar">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Heartbeat</a>
+      <a class="navbar-brand" href="/">Heartbeat</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggler">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -15,9 +15,12 @@
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
+          
+          {% if user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="#">About Us</a>
+            <a class="nav-link" href="{% url 'logout' %}">Logout</a>
           </li>
+          {% else %}
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
              Login As
@@ -29,9 +32,16 @@
               <li><a class="dropdown-item" href="{% url 'deliveryPersonLogin' %}">Delivery Person</a></li>
             </ul>
           </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          {% if user.is_authenticated %}
+      
           <li class="nav-item">
             <a class="nav-link" href="#">Profile</a>
           </li>
+          {% endif %}
         </ul>
       </div>
     </div>
