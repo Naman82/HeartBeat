@@ -13,19 +13,19 @@ stripe.api_key = 'sk_test_51LgXo0SEd9yZ4TiMmUSXBYmkghXBR0WXgHFlJtNYFBlumqwxdaaEq
 def index(request):
     return render(request,'index.html')
 
-def bloodStock(request):
-    if request.POST:
-        apositive = request.POST['A_positive']
-        anegative = request.POST['A_negative']
-        opositive = request.POST['O_positive']
-        onegative = request.POST['O_negative']
-        abpositive = request.POST['AB_positive']
-        abnegative = request.POST['AB_negative']
+# def bloodStock(request):
+#     if request.POST:
+#         apositive = request.POST['A_positive']
+#         anegative = request.POST['A_negative']
+#         opositive = request.POST['O_positive']
+#         onegative = request.POST['O_negative']
+#         abpositive = request.POST['AB_positive']
+#         abnegative = request.POST['AB_negative']
 
-        new_bloodstock = BloodStock(user=request.user,apositive=apositive,anegative=anegative,onegative=onegative,opositive=opositive,abnegative=abnegative,abpositive=abpositive)
-        new_bloodstock.save()
-        return redirect('index')
-    return render(request,'bloodbank/bloodstock.html')
+#         new_bloodstock = BloodStock(user=request.user,apositive=apositive,anegative=anegative,onegative=onegative,opositive=opositive,abnegative=abnegative,abpositive=abpositive)
+#         new_bloodstock.save()
+#         return redirect('index')
+#     return render(request,'bloodbank/bloodstock.html')
 
 def bloodStockEdit(request,pk):
     if pk is not None:

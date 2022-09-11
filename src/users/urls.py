@@ -3,7 +3,7 @@ from users import views
 
 urlpatterns = [
     path('',views.index,name='index'),
-    path('bloodbank/bloodstock/',views.bloodStock,name='bloodStock'),
+    # path('bloodbank/bloodstock/',views.bloodStock,name='bloodStock'),
     path('bloodbank/bloodstock/edit/<pk>',views.bloodStockEdit,name='bloodStockEdit'),
     path('success/',views.success,name='success'),
     path('cancel/',views.cancel,name='cancel'),
