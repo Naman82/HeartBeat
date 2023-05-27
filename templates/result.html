@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block title %}
+HeartBeat
+{% endblock %}
+
+  {% block body %}
+    <section id="contact" class="contact">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header mt-5">
+          <!-- <h2>Contact</h2> -->
+          <p>Results . . . </p>
+        </header>
+
+        <div class="row gy-4">
+
+          <div class="col-lg-6">
+
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-heart"></i>
+                  <h3>HeartBeat</h3>
+                  <p>Exercise Daily,<br>to avoid Heart Problems</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Call Us</h3>
+                  <p>+91 8X-XXXX-XXXX<br>+91 66 25XX XX41</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>info@example.com<br>contact@example.com</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-clock"></i>
+                  <h3>Available Hours</h3>
+                  <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="col-lg-6">
+            <div class="info-box" style="height: 428px;">
+              <!-- <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <p>A108 Adam Street,<br>New York, NY 535022</p> -->
+              <div style="text-align: center; margin-top: 110px;">
+                <h1 class="mb-4">Reports are . . .</h1>
+                {% if predictions == 0 %}
+                <h1 style="color: green;" class="mb-3">NEGATIVE</h1>
+                <p>you are not suffering from heart disease</p>
+                {% else %}
+                <h1 style="color: red;" class="mb-3">POSITIVE</h1>
+                <p>you are suffering from heart disease</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    {% endblock %}

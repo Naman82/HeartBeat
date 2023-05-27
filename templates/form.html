@@ -1,0 +1,180 @@
+{% extends 'base.html' %}
+
+{% block title %}
+HeartBeat
+{% endblock %}
+
+  {% block body %}
+    <section id="contact" class="contact">
+
+      <div class="container" data-aos="fade-up">
+
+        <header class="section-header mt-5">
+          <!-- <h2>Contact</h2> -->
+          <p>Fill up the details . . . </p>
+        </header>
+
+        <div class="row gy-4">
+
+          <!-- <div class="col-lg-6">
+
+            <div class="row gy-4">
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-geo-alt"></i>
+                  <h3>Address</h3>
+                  <p>A108 Adam Street,<br>New York, NY 535022</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-telephone"></i>
+                  <h3>Call Us</h3>
+                  <p>+1 5589 55488 55<br>+1 6678 254445 41</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-envelope"></i>
+                  <h3>Email Us</h3>
+                  <p>info@example.com<br>contact@example.com</p>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="info-box">
+                  <i class="bi bi-clock"></i>
+                  <h3>Open Hours</h3>
+                  <p>Monday - Friday<br>9:00AM - 05:00PM</p>
+                </div>
+              </div>
+            </div>
+
+          </div> -->
+
+          <div class="col-lg-12">
+            <form action="{% url 'result' %}" method="post" class="php-email-form">
+                {% csrf_token %}
+              <div class="row gy-4">
+
+                <!-- line 1 -->
+                <div class="col-md-4">
+                  <input type="text" name="age" class="form-control" placeholder="Your Age" required>
+                </div>
+
+                <!-- <div class="col-md-4 ">
+                  <input type="" class="form-control" name="email" placeholder="Your Email" required>
+                </div> -->
+                <div class="col-md-4">
+                <select class="form-select form-control" style="padding: 8.2px; border-radius: 0;" name="sex" aria-label="Default select example">
+                    <option selected>Sex</option>
+                    <option value="0">Male</option>
+                    <option value="1">Female</option>
+                  </select>
+                </div>
+
+                <div class="col-md-4">
+                    <select class="form-select form-control" style="padding: 8.2px; border-radius: 0;" name="cp" aria-label="Default select example">
+                        <option selected>Chest pain type</option>
+                        <option value="0"> typical type 1</option>
+                        <option value="1"> typical type angina</option>
+                        <option value="2"> non-angina pain</option>
+                        <option value="3"> asymptomatic</option>
+                      </select>
+                    </div>
+                <!-- line 2 -->
+
+                <div class="col-md-4">
+                  <input type="text" class="form-control" name="trestbps" placeholder="Resting blood pressure" required>
+                </div>
+
+                <div class="col-md-4">
+                  <input type="text" class="form-control" name="chol" placeholder="Serum cholesterol" required>
+                </div>
+
+                <div class="col-md-4">
+                    <select class="form-select form-control" style="padding: 8.2px; border-radius: 0;" name="fbs" aria-label="Default select example">
+                        <option selected>Fasting blood sugar</option>
+                        <option value="0">less than or equal to 120 mg/dl</option>
+                        <option value="1">greater than 120 mg/dl</option>
+                      </select>
+                    </div>
+
+                <!-- line 3 -->
+                <div class="col-md-4">
+                    <select class="form-select form-control" style="padding: 8.2px; border-radius: 0;" name="restecg" aria-label="Default select example">
+                        <option selected>Resting electrographic results</option>
+                        <option value="0">normal</option>
+                        <option value="1">having ST-T wave abnormal</option>
+                        <option value="2">left ventricular hypertrophy</option>
+                      </select>
+                    </div>
+
+                <div class="col-md-4">
+                  <input type="text" class="form-control" name="thalach" placeholder="Maximum heart rate achieved (thalach)" required>
+                </div>
+
+                <div class="col-md-4">
+                    <select class="form-select form-control" style="padding: 8.2px; border-radius: 0;" name="exang" aria-label="Default select example">
+                        <option selected>Exercise induced angina (exang)</option>
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                      </select>
+                    </div>
+
+                <!-- line 4 -->
+                <div class="col-md-4">
+                  <input type="text" class="form-control" name="oldpeak" placeholder="ST depression (oldpeak)" required>
+                </div>
+                <div class="col-md-4">
+                    <select class="form-select form-control" style="padding: 8.2px; border-radius: 0;" name="slope" aria-label="Default select example" aria-placeholder="Slope of the peak">
+                        <option selected>Slope of the peak</option>
+                        <option value="0">unsloping</option>
+                        <option value="1">flat</option>
+                        <option value="2">downsloping</option>
+                      </select>
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-select form-control" style="padding: 8.2px; border-radius: 0;" name="ca" aria-label="Default select example">
+                            <option selected>Number of major vessels (ca)</option>
+                            <option value="0">0</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                          </select>
+                        </div>
+
+                <!-- line 5 -->
+                <div class="col-md-4">
+                    <select class="form-select form-control" style="padding: 8.2px; border-radius: 0;" name="thal" aria-label="Default select example">
+                        <option selected>Defect type (thal)</option>
+                        <option value="0">Not Known</option>
+                        <option value="1">Normal</option>
+                        <option value="2">Fixed defect</option>
+                        <option value="3">Rversable defect</option>
+                      </select>
+                    </div>
+
+                <!-- <div class="col-md-12">
+                  <textarea class="form-control" name="message" rows="6" placeholder="Message" required></textarea>
+                </div> -->
+
+                <div class="col-md-12 text-center">
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
+                  <div class="sent-message">Your message has been sent. Thank you!</div>
+
+                  <button type="submit">Predict</button>
+                </div>
+
+              </div>
+            </form>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+    {% endblock %}
